@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+*{
+    box-sizing:border-box;
+    overflow:-moz-hidden-unscrollable;
+
+
+}
+.hero{
+    margin-top:10%;
+}
+h1{
+    font-family:'Black Ops One', cursive;
+    z-index:10;
+}
+.text-red{
+    color:	#E50914;
+}
+.featured{
+    margin-top:10%;
+}
+
+#heroimg{
+    position:absolute;
+    top:-200px;
+    left:20%;
+   -webkit-transform: scale(1.2) rotate(-30deg);
+       -ms-transform: scale(1.2) rotate(-20deg);
+           transform: scale(1.2) rotate(-30deg);
+   z-index: -1;
+}
+

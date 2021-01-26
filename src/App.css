@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+
+body{
+  background-color: #242424;
+  color:#ededed;
+}
+::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #242424;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #242424;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 10px rgba(0,0,0,.3);
+	background-color: #e50914;
+}
+#logo{
+    
+    font-family:'Black Ops One', cursive;
+    color:#e50914 !important;
+}
+#nav{
+    border-bottom:1px solid rgba(255, 255, 255, 0.11);
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-link{
+    font-family:'Black Ops One', cursive;
+    margin-left:20px;
+    padding:20px 40px !important;
+    transition:0.2s ease-in;
+}
+.nav-link:hover{
+    color:#ededed;
+    background-color:#e50914;
+    
+}
+a{
+    text-decoration:none !important;
+    color: #ededed;
+}
+a:hover{
+    color:#ededed;
 }
 
-.App-link {
-  color: #61dafb;
+#heroimg{
+  position:absolute;
+  top:-200px;
+  left:20%;
+ -webkit-transform: scale(1.2) rotate(-30deg);
+     -ms-transform: scale(1.2) rotate(-20deg);
+         transform: scale(1.2) rotate(-30deg);
+ z-index: -1;
+}
+#like{
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+#footer{
+  font-family:'Black Ops One', cursive;
+  border-top:1px solid rgba(255, 255, 255, 0.11);
+  margin-top:10%;
 }
