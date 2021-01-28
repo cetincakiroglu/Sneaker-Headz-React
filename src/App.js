@@ -1,56 +1,55 @@
-import React from 'react'
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import {Container,Row,Col} from 'react-bootstrap'
+import React, { useState } from 'react'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { Container, Row, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import NavBar from './Components/NavBar'
-import Home from './Components/Home'
-import About from './Components/About'
-import Products from './Components/Products'
-import ProductDetails from './Components/Product/ProductDetails'
-import Contact from './Components/Contact'
-import NotFound from './Components/NotFound'
 import Footer from './Components/Footer'
-import Search from './Components/Search'
+import Result from './Components/Result'
+import links from './Data/links'
+
 
 function App() {
- 
-  
+  const [searchResult, setSearchResult] = useState([]);
+
+  const routeMaps = links.map((item, index) => (
+    <Route
+      key={index}
+      exact={item.isExact}
+      path={item.link}
+      component={item.component}
+    />
+  ));
+
   return (
     <>
-    <BrowserRouter>
-    <NavBar />
-    <Container>
-      <Row>
-       
-         <Col>
-            <Switch>
-                <Route path='/Home'>
-                  <Home />
+      <BrowserRouter>
+        <NavBar links={links}
+          searchResult={searchResult}
+          setSearchResult={setSearchResult}
+        />
+        <Container>
+          <Row>
+            <Col>
+              <Switch>
+                <Route path='/search'>
+                  <Result
+                    searchResult={searchResult}
+                    setSearchResult={setSearchResult}
+                  />
                 </Route>
-                <Route path='/Products'>
-                  <Products />
-                </Route>
-                <Route path='/ProductDetails/:id' >
-                  <ProductDetails/>
-                </Route>
-                <Route path='/About'>
-                  <About />
-                </Route>
-                <Route path='/Contact'>
-                  <Contact />
-                </Route>
-            </Switch>
-         </Col>
-      </Row>
-     
-    </Container>
-    <Container>
-      <Footer />
-    </Container>
-    
-    </BrowserRouter>
+                {routeMaps}
+              </Switch>
+            </Col>
+          </Row>
+
+        </Container>
+        <Container>
+          <Footer />
+        </Container>
+
+      </BrowserRouter>
     </>
   );
 }

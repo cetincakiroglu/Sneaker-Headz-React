@@ -1,5 +1,5 @@
 import React from 'react'
-import {Col, Row, Container, Image,Card, Button} from 'react-bootstrap'
+import { Col, Row, Container, Image, Card, Button } from 'react-bootstrap'
 import './Home.css'
 
 
@@ -17,41 +17,45 @@ function Home() {
 
   const featuredImages = [product1, product2, product3];
 
-  
-    return (
-        <>
-        <Container className="relative">
-          <Row className="hero">
-            <Col>
-              <h1 className="display-1">Sneakz <br/> <span class="text-red">Up </span><br/> Move <span class="text-red"><br /> Forward</span></h1>
-            </Col>
-          <Image id="heroimg" src={heroimg} fluid/>  
-          </Row>
-          <Row className="relative featured">
+
+  return (
+    <>
+      <Container className="relative">
+        <Row className="hero">
+          <Col>
+            <h1 className="display-1 font-display">Sneakz <br /> <span className="text-red">Up </span><br /> Move <span className="text-red"><br /> Forward</span></h1>
+          </Col>
+          <Image id="heroimg" src={heroimg} fluid />
+        </Row>
+        <Row className="relative featured">
+          <Col>
             <h2>Featured Sneakerz</h2>
-          </Row>
-          <Row className="d-flex justify-content-between mt-5">
-         {featuredImages.map((item,index) => (
-           <Card className="text-dark" style={{ width: '18rem' }}>
-           <Card.Img variant="top" src={item} />
-           <Card.Body>
-             <Card.Title>Sneaker {index+1}</Card.Title>
-             <Card.Text>
-               Some quick example text to build on the card title and make up the bulk of
-               the card's content.
+          </Col>
+        </Row>
+        <Row className="d-flex justify-content-between mt-5">
+          {featuredImages.map((item, index) => (
+            <Col md={4}>
+              <Card className="text-dark">
+                <Card.Img variant="top" src={item} fluid />
+                <Card.Body>
+                  <Card.Title className="font-secondary">Sneaker {index + 1}</Card.Title>
+                  <Card.Text className="font-secondary">
+                    Some quick example text to build on the card title and make up the bulk of
+                    the card's content.
              </Card.Text>
-             <div className="d-flex justify-content-between">
-             <Button variant="secondary">Wish list</Button>
-             <Button variant="success">Add to cart</Button>
-             </div>
-           </Card.Body>
-         </Card>
-         ))}           
-         </Row>
-        </Container>
-     
-      </>
-    )
+                  <div className="d-flex justify-content-between">
+                    <Button variant="success" className="font-secondary">Add to cart</Button>
+                    <Button className="like">❤︎</Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+    </>
+  )
 }
 
 export default Home

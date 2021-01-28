@@ -1,37 +1,36 @@
-import React,{useState} from 'react'
-import {Link} from 'react-router-dom'
-import {Nav, Navbar, Button, Form, FormControl} from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { Nav, Navbar, Button, Form, FormControl } from 'react-bootstrap'
 import Search from './Search'
 
-function NavBar() {
-    
-    
+function NavBar({ searchResult, setSearchResult, links }) {
+    function searchParams(query) {
+        console.log(query);
+    }
+    const navItems = links
+        .filter(item => item.isLink)
+        .map((item, index) => (
+            <Nav.Link className="nav-link" key={index}>
+                <Link to={item.link}>{item.title}</Link>
+            </Nav.Link>
+        ))
+
     return (
-       <>
-       <Navbar id='nav' className="py-0 my-0" variant="dark">
-           <Navbar.Brand  >
-            <Link id="logo" to='/Home'>Sneaker Headz</Link>
-            </Navbar.Brand>
-           <Nav className="mr-auto">
-               <Nav.Link className="nav-link">
-                   <Link to='/Home'>Home</Link>
-                </Nav.Link>
-               <Nav.Link className="nav-link">
-                   <Link to ='/Products'>Sneakers</Link>
-                </Nav.Link>
-               <Nav.Link className="nav-link">
-                   <Link to ='/About'>About</Link>
-                </Nav.Link>
-               <Nav.Link className="nav-link">
-                   <Link to ='/Contact'>Contact</Link>
-                </Nav.Link>
-           </Nav>
-           <Search 
-            
-            />
-       </Navbar>
-       
-       </>
+        <>
+            <Navbar id='nav' className="py-0 my-0" variant="dark">
+                <Navbar.Brand  >
+                    <Link id="logo" to='/'>Sneaker Headz</Link>
+                </Navbar.Brand>
+                <Nav className="mr-auto">
+                    {navItems}
+                </Nav>
+                <Search
+                    searchResult={searchResult}
+                    setSearchResult={setSearchResult}
+                />
+            </Navbar>
+
+        </>
     )
 }
 

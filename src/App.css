@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,300;1,400&display=swap');
+
 body{
   background-color: #242424;
   color:#ededed;
@@ -51,24 +53,79 @@ a{
 a:hover{
     color:#ededed;
 }
-
-#heroimg{
-  position:absolute;
-  top:-200px;
-  left:20%;
- -webkit-transform: scale(1.2) rotate(-30deg);
-     -ms-transform: scale(1.2) rotate(-20deg);
-         transform: scale(1.2) rotate(-30deg);
- z-index: -1;
+#search{
+    margin-right:5px;
+    padding:20px;
 }
-#like{
+
+#search:focus{
+    box-shadow:none;
+    outline:none;
+}
+#searchBtn{
+    border:none;
+    margin-left:-60px;
+    background-color:#ffff;
+    color:#242424;
+}
+#searchBtn:active{
+    box-shadow:none;
+}
+#breadcrumb{
+    list-style-type: none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.11);
+}
+#contact-form{
+    padding:20px;
+    background:#ececec42;
+    box-shadow:inset 2px 2px 10px #ececec1f;
+}
+#formBtn{
+    padding:10px 60px;
+}
+
+h2{
+    font-family: 'Roboto', sans-serif;
+}
+.font-secondary{
+    font-family: 'Roboto', sans-serif;
+    font-size:1rem;
+}
+
+.font-display{
+    font-family:'Black Ops One', cursive;
+}
+.text-small{
+    font-size:14px;
     
 }
 
+.like{
+    background-color:#e50914;
+    border:none;
+}
 
+.like:hover{
+    color:#e50914;
+    background-color:#242424;
+}
+button:focus{
+    box-shadow:none !important;
+}
+#bgImg{
+    
 
+   -webkit-transform: scale(0.2) rotate(-30deg);
+       -ms-transform: scale(0.2) rotate(-20deg);
+           transform: scale(1.5) rotate(50deg);
+   z-index: -1;
+}
 #footer{
   font-family:'Black Ops One', cursive;
   border-top:1px solid rgba(255, 255, 255, 0.11);
   margin-top:10%;
+}
+.footer-link:hover{
+    color:#e50914;
+    transition: .2s ease;
 }
