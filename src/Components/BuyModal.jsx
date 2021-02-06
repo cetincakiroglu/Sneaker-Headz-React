@@ -1,6 +1,5 @@
-import React from 'react'
-import { Modal, Button } from 'react-bootstrap'
-
+import React from "react";
+import { Modal, Button } from "react-bootstrap";
 
 function BuyModal(props) {
   return (
@@ -9,18 +8,20 @@ function BuyModal(props) {
         <Modal.Header closeButton>
           <Modal.Title></Modal.Title>
         </Modal.Header>
-        <Modal.Body className="text-dark font-secondary">Item {props.title} added to cart</Modal.Body>
+        <Modal.Body className="text-dark font-secondary">
+          Item {props.title} added to cart
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="success font-secondary" onClick={props.handleClose}>
             Continue Shopping
-                </Button>
+          </Button>
           <Button variant="primary font-secondary" onClick={props.handleClose}>
             Proceed to Checkout
-                </Button>
+          </Button>
         </Modal.Footer>
       </Modal>
     </>
-  )
+  );
 }
 
-export default BuyModal
+export default BuyModal;

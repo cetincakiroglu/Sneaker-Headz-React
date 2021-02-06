@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
-import { Container, Row, Col } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 
-import NavBar from './Components/NavBar'
-import Footer from './Components/Footer'
-import Result from './Components/Result'
-import links from './Data/links'
-
+import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
+import Result from "./Components/Result";
+import links from "./Data/links";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]);
@@ -25,7 +24,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar links={links}
+        <NavBar
+          links={links}
           searchResult={searchResult}
           setSearchResult={setSearchResult}
         />
@@ -33,7 +33,7 @@ function App() {
           <Row>
             <Col>
               <Switch>
-                <Route path='/search'>
+                <Route path="/search">
                   <Result
                     searchResult={searchResult}
                     setSearchResult={setSearchResult}
@@ -43,12 +43,10 @@ function App() {
               </Switch>
             </Col>
           </Row>
-
         </Container>
         <Container>
           <Footer />
         </Container>
-
       </BrowserRouter>
     </>
   );
