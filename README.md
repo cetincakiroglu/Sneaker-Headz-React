@@ -36,7 +36,7 @@
 - [x] User test.
     1. [x] Test on Firefox.
     2. [x] Test on Chrome.
-- [x] Deploy.
+- [x] Deploy on codesandbox.
 
 ---
 
