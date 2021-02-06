@@ -14,12 +14,12 @@
 - [x] Install React Router & React Bootstrap.
 - [x] Create component files and folders according to the UX.
 - [x] Code basic outlines of project.
-- [x] Homepage.
-    1. [x] Product page.
-    2. [x] Contact page.
-    3. [x] About us page.
-    4. [x] Product card.
-    5. [x] Product details.
+    1. [x] Homepage.
+    2. [x] Product page.
+    3. [x] Contact page.
+    4. [x] About us page.
+    5. [x] Product card.
+    6. [x] Product details.
     
 ### Stage III
 - [x] Implement dynamic searchbar, user should be able to search products by keywords or name.
